@@ -31,47 +31,50 @@ import PharmacyDashboard from "./pages/pharmacy/Dashboard";
 import PharmacyInventory from "./pages/pharmacy/Inventory";
 import PharmacyOrders from "./pages/pharmacy/Orders";
 
-const queryClient = new QueryClient();
-
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <UserProvider>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/role-selection" element={<RoleSelection />} />
-            
-            {/* Patient Routes */}
-            <Route path="/patient/dashboard" element={<PatientDashboard />} />
-            <Route path="/patient/diet" element={<PatientDiet />} />
-            <Route path="/patient/recipes" element={<PatientRecipes />} />
-            <Route path="/patient/medications" element={<PatientMedications />} />
-            <Route path="/patient/appointments" element={<PatientAppointments />} />
-            <Route path="/patient/medicine-order" element={<PatientMedicineOrder />} />
-            
-            {/* Doctor Routes */}
-            <Route path="/doctor/dashboard" element={<DoctorDashboard />} />
-            <Route path="/doctor/appointments" element={<DoctorAppointments />} />
-            <Route path="/doctor/availability" element={<DoctorAvailability />} />
-            <Route path="/doctor/consultation" element={<DoctorConsultation />} />
-            <Route path="/doctor/patient-notes" element={<DoctorPatientNotes />} />
-            
-            {/* Pharmacy Routes */}
-            <Route path="/pharmacy/dashboard" element={<PharmacyDashboard />} />
-            <Route path="/pharmacy/inventory" element={<PharmacyInventory />} />
-            <Route path="/pharmacy/orders" element={<PharmacyOrders />} />
-            
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </UserProvider>
-  </QueryClientProvider>
-);
+// Create a new QueryClient instance as a function component
+const App = () => {
+  const queryClient = new QueryClient();
+  
+  return (
+    <QueryClientProvider client={queryClient}>
+      <UserProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/role-selection" element={<RoleSelection />} />
+              
+              {/* Patient Routes */}
+              <Route path="/patient/dashboard" element={<PatientDashboard />} />
+              <Route path="/patient/diet" element={<PatientDiet />} />
+              <Route path="/patient/recipes" element={<PatientRecipes />} />
+              <Route path="/patient/medications" element={<PatientMedications />} />
+              <Route path="/patient/appointments" element={<PatientAppointments />} />
+              <Route path="/patient/medicine-order" element={<PatientMedicineOrder />} />
+              
+              {/* Doctor Routes */}
+              <Route path="/doctor/dashboard" element={<DoctorDashboard />} />
+              <Route path="/doctor/appointments" element={<DoctorAppointments />} />
+              <Route path="/doctor/availability" element={<DoctorAvailability />} />
+              <Route path="/doctor/consultation" element={<DoctorConsultation />} />
+              <Route path="/doctor/patient-notes" element={<DoctorPatientNotes />} />
+              
+              {/* Pharmacy Routes */}
+              <Route path="/pharmacy/dashboard" element={<PharmacyDashboard />} />
+              <Route path="/pharmacy/inventory" element={<PharmacyInventory />} />
+              <Route path="/pharmacy/orders" element={<PharmacyOrders />} />
+              
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </BrowserRouter>
+        </TooltipProvider>
+      </UserProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;
