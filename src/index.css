@@ -1,10 +1,11 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 210 40% 98%;
     --foreground: 222.2 84% 4.9%;
 
     --card: 0 0% 100%;
@@ -13,11 +14,11 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 222.2 47.4% 11.2%;
+    --primary: 209 100% 53%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 147 68% 49%;
+    --secondary-foreground: 210 40% 98%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
@@ -33,22 +34,6 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
   .dark {
@@ -79,14 +64,6 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
 
@@ -96,6 +73,61 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-gray-100 text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .phone-frame {
+    @apply relative w-[320px] h-[650px] bg-black rounded-[40px] p-3 shadow-xl overflow-hidden;
+  }
+
+  .phone-screen {
+    @apply relative w-full h-full bg-white rounded-[32px] overflow-hidden;
+  }
+
+  .nav-item {
+    @apply flex flex-col items-center text-xs text-gray-500;
+  }
+
+  .nav-item.active {
+    @apply text-health-primary;
+  }
+
+  .health-card {
+    @apply bg-white rounded-xl shadow-md p-4 mb-4;
+  }
+
+  .health-input {
+    @apply w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-health-primary;
+  }
+
+  .btn-health-primary {
+    @apply bg-health-primary text-white px-6 py-2 rounded-lg shadow-md hover:bg-opacity-90 transition-all;
+  }
+
+  .btn-health-secondary {
+    @apply bg-health-secondary text-white px-6 py-2 rounded-lg shadow-md hover:bg-opacity-90 transition-all;
+  }
+
+  .btn-health-accent {
+    @apply bg-health-accent text-white px-6 py-2 rounded-lg shadow-md hover:bg-opacity-90 transition-all;
+  }
+
+  .swipe-container {
+    @apply w-full h-full overflow-hidden;
+  }
+
+  .screen {
+    @apply w-full h-full absolute top-0 left-0 transition-all duration-300 ease-in-out;
+  }
+
+  .status-bar {
+    @apply flex justify-between items-center p-2 text-xs;
+  }
+
+  .status-icon {
+    @apply w-4 h-4;
   }
 }
