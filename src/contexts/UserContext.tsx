@@ -20,6 +20,13 @@ interface UserContextType {
   setRole: (role: UserRole) => void;
 }
 
+// Predefined user credentials for simulation
+const DEMO_USER = {
+  email: 'demo@example.com',
+  password: 'password123',
+  name: 'Demo User'
+};
+
 const UserContext = createContext<UserContextType | undefined>(undefined);
 
 export const UserProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
@@ -49,14 +56,15 @@ export const UserProvider: React.FC<{ children: React.ReactNode }> = ({ children
   }, [user]);
 
   const login = async (email: string, password: string): Promise<boolean> => {
-    // Simulate API call
+    // For demo, accept the fixed credentials or auto-login with any credentials
     return new Promise((resolve) => {
       setTimeout(() => {
-        // For demo, allow any login with validation
-        if (email && password.length >= 6) {
+        // Accept either the demo credentials or any non-empty input
+        if ((email === DEMO_USER.email && password === DEMO_USER.password) || 
+            (email && password.length > 0)) {
           setUser({
             id: Math.random().toString(36).substring(2, 9),
-            name: email.split('@')[0],
+            name: email === DEMO_USER.email ? DEMO_USER.name : email.split('@')[0],
             email,
             role: null,
           });
@@ -64,15 +72,15 @@ export const UserProvider: React.FC<{ children: React.ReactNode }> = ({ children
         } else {
           resolve(false);
         }
-      }, 800);
+      }, 500);
     });
   };
 
   const register = async (name: string, email: string, password: string): Promise<boolean> => {
-    // Simulate API call
+    // For demo, auto-register with any input
     return new Promise((resolve) => {
       setTimeout(() => {
-        if (name && email && password.length >= 6) {
+        if (name && email && password.length > 0) {
           setUser({
             id: Math.random().toString(36).substring(2, 9),
             name,
@@ -83,7 +91,7 @@ export const UserProvider: React.FC<{ children: React.ReactNode }> = ({ children
         } else {
           resolve(false);
         }
-      }, 800);
+      }, 500);
     });
   };
 

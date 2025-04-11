@@ -6,13 +6,13 @@ import PhoneFrame from '@/components/PhoneFrame';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
-import { ArrowLeft, Activity } from 'lucide-react';
+import { ArrowLeft, Activity, Info } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 
 const Register = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [name, setName] = useState('New User');
+  const [email, setEmail] = useState('newuser@example.com');
+  const [password, setPassword] = useState('password123');
   const [isLoading, setIsLoading] = useState(false);
   const { register } = useUser();
   const navigate = useNavigate();
@@ -66,6 +66,14 @@ const Register = () => {
             <Activity size={48} />
           </div>
           <h2 className="text-2xl font-bold mb-6">Join HealthVerse</h2>
+          
+          <div className="mb-4 p-3 bg-blue-50 border border-blue-200 rounded-md flex items-start gap-2 w-full">
+            <Info size={18} className="text-blue-500 mt-0.5" />
+            <div className="text-sm text-gray-700">
+              <p>For demo purposes, any non-empty values will work for registration</p>
+            </div>
+          </div>
+          
           <form onSubmit={handleSubmit} className="w-full space-y-4">
             <div className="space-y-2">
               <Label htmlFor="name">Full Name</Label>
