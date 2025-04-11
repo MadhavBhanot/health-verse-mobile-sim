@@ -65,11 +65,13 @@ const AuthenticatedLayout: React.FC<AuthenticatedLayoutProps> = ({
 
   return (
     <PhoneFrame>
-      <div className="pb-16 h-full flex flex-col">
+      <div className="flex flex-col h-full">
         <div className="flex-1 overflow-auto">
           {children}
         </div>
-        {renderNavigation()}
+        <div className="mt-auto">
+          {renderNavigation()}
+        </div>
       </div>
     </PhoneFrame>
   );
