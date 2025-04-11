@@ -14,11 +14,13 @@ const PharmacyNavigation: React.FC = () => {
   ];
 
   return (
-    <div className="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 flex justify-between items-center p-2 z-10">
+    <div className="bg-white border-t border-gray-200 flex justify-between items-center p-2">
       {navItems.map((item) => (
         <button
           key={item.path}
-          className={`nav-item ${location.pathname === item.path ? 'active' : ''}`}
+          className={`flex flex-col items-center justify-center p-1 ${
+            location.pathname === item.path ? 'text-health-primary' : 'text-gray-500'
+          }`}
           onClick={() => navigate(item.path)}
         >
           <item.icon size={20} />
