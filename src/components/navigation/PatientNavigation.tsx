@@ -17,17 +17,19 @@ const PatientNavigation: React.FC = () => {
   ];
 
   return (
-    <div className="bg-white border-t border-gray-200 flex justify-between items-center p-2">
+    <div className="bg-white border-t border-gray-200 flex justify-between items-center px-2 py-1.5">
       {navItems.map((item) => (
         <button
           key={item.path}
           className={`flex flex-col items-center justify-center p-1 ${
-            location.pathname === item.path ? 'text-health-primary' : 'text-gray-500'
+            location.pathname === item.path 
+              ? 'text-health-primary' 
+              : 'text-gray-400 hover:text-gray-600'
           }`}
           onClick={() => navigate(item.path)}
         >
-          <item.icon size={20} />
-          <span className="text-[10px] mt-1">{item.label}</span>
+          <item.icon size={18} />
+          <span className="text-[10px] mt-0.5">{item.label}</span>
         </button>
       ))}
     </div>

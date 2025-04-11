@@ -3,6 +3,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 @layer base {
   :root {
     --background: 210 40% 98%;
@@ -73,7 +75,7 @@
   }
 
   body {
-    @apply bg-gray-100 text-foreground;
+    @apply bg-gray-100 text-foreground font-inter;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
@@ -88,7 +90,7 @@
   }
 
   .nav-item {
-    @apply flex flex-col items-center text-xs text-gray-500;
+    @apply flex flex-col items-center text-[11px] text-gray-500;
   }
 
   .nav-item.active {
@@ -96,7 +98,11 @@
   }
 
   .health-card {
-    @apply bg-white rounded-xl shadow-md p-4 mb-4;
+    @apply bg-white rounded-xl shadow-sm p-4 mb-3 border border-gray-100;
+  }
+
+  .health-metric-card {
+    @apply p-3 flex flex-col items-center bg-white rounded-lg shadow-sm border border-gray-100;
   }
 
   .health-input {
@@ -104,15 +110,15 @@
   }
 
   .btn-health-primary {
-    @apply bg-health-primary text-white px-6 py-2 rounded-lg shadow-md hover:bg-opacity-90 transition-all;
+    @apply bg-health-primary text-white px-6 py-2 rounded-lg shadow-sm hover:bg-opacity-90 transition-all;
   }
 
   .btn-health-secondary {
-    @apply bg-health-secondary text-white px-6 py-2 rounded-lg shadow-md hover:bg-opacity-90 transition-all;
+    @apply bg-health-secondary text-white px-6 py-2 rounded-lg shadow-sm hover:bg-opacity-90 transition-all;
   }
 
   .btn-health-accent {
-    @apply bg-health-accent text-white px-6 py-2 rounded-lg shadow-md hover:bg-opacity-90 transition-all;
+    @apply bg-health-accent text-white px-6 py-2 rounded-lg shadow-sm hover:bg-opacity-90 transition-all;
   }
 
   .swipe-container {
@@ -129,5 +135,17 @@
 
   .status-icon {
     @apply w-4 h-4;
+  }
+  
+  .upcoming-card {
+    @apply p-3 rounded-lg shadow-sm border border-gray-100 bg-white;
+  }
+  
+  .dashboard-title {
+    @apply text-xl font-semibold mb-4;
+  }
+  
+  .section-title {
+    @apply text-base font-medium mb-2 text-gray-800;
   }
 }
