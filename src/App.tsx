@@ -31,8 +31,9 @@ import PharmacyDashboard from "./pages/pharmacy/Dashboard";
 import PharmacyInventory from "./pages/pharmacy/Inventory";
 import PharmacyOrders from "./pages/pharmacy/Orders";
 
-// Create a new QueryClient instance as a function component
+// Create App component as a proper function component
 const App = () => {
+  // Create a new QueryClient instance inside the component
   const queryClient = new QueryClient();
   
   return (
