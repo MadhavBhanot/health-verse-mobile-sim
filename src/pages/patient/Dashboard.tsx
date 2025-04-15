@@ -101,6 +101,15 @@ const PatientDashboard = () => {
           View All Health Data
         </Button>
       </div>
+      <div className="flex items-center">
+          <Button 
+          variant="outline" 
+          className="mt-4
+          flex self-center"
+          onClick={() => navigate('/login')}
+        >
+          Log Out
+        </Button></div>
     </AuthenticatedLayout>
   );
 };

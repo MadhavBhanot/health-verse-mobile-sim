@@ -85,7 +85,15 @@ const DoctorDashboard = () => {
             <p className="text-gray-600">No appointments scheduled for today</p>
           </Card>
         )}
-
+         <div className="flex items-center">
+          <Button 
+          variant="outline" 
+          className="mt-4
+          flex self-center"
+          onClick={() => navigate('/login')}
+        >
+          Log Out
+        </Button></div>
         <div className="grid grid-cols-2 gap-4">
           <Button 
             className="flex-col py-6 bg-health-primary"

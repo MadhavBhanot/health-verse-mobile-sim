@@ -1,9 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @layer base {
   :root {
@@ -82,7 +81,7 @@
 
 @layer components {
   .phone-frame {
-    @apply relative w-[320px] h-[650px] bg-black rounded-[40px] p-3 shadow-xl overflow-hidden;
+    @apply relative w-[500px] h-[90vh] bg-black rounded-[40px] p-3 shadow-xl overflow-hidden;
   }
 
   .phone-screen {

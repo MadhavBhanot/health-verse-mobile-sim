@@ -171,7 +171,15 @@ const PharmacyDashboard = () => {
             <p className="text-sm text-gray-500">All items are well-stocked</p>
           </Card>
         )}
-
+        <div className="flex items-center">
+          <Button 
+          variant="outline" 
+          className="mt-4
+          flex self-center"
+          onClick={() => navigate('/login')}
+        >
+          Log Out
+        </Button></div>
         <div className="grid grid-cols-2 gap-4 mb-4">
           <Button 
             className="flex-col py-4 bg-health-primary hover:bg-health-primary/90"
