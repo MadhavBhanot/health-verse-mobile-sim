@@ -1,4 +1,3 @@
-
 import React from 'react';
 import AuthenticatedLayout from '@/components/layouts/AuthenticatedLayout';
 import { Button } from '@/components/ui/button';
@@ -7,9 +6,11 @@ import { useUser } from '@/contexts/UserContext';
 import { mockHealthMetrics, mockMedications, mockAppointments } from '@/utils/mockData';
 import { Activity, Heart, Bed, Droplet, Weight, Calendar, Pill, ChevronRight } from 'lucide-react';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
+import { useNavigate } from 'react-router-dom';
 
 const PatientDashboard = () => {
   const { user } = useUser();
+  const navigate = useNavigate();
 
   return (
     <AuthenticatedLayout requiredRole="patient">
@@ -102,14 +103,14 @@ const PatientDashboard = () => {
         </Button>
       </div>
       <div className="flex items-center">
-          <Button 
+        <Button 
           variant="outline" 
-          className="mt-4
-          flex self-center"
+          className="mt-4 flex self-center"
           onClick={() => navigate('/login')}
         >
           Log Out
-        </Button></div>
+        </Button>
+      </div>
     </AuthenticatedLayout>
   );
 };
