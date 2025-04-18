@@ -54,7 +54,7 @@ const RoleSelection = () => {
                 <UserRound className="text-health-primary" size={24} />
               </div>
               <div>
-                <h2 className="font-semibold text-lg"></h2>
+                <h2 className="font-semibold text-lg">Member</h2>
                 <p className="text-sm text-gray-600">
                   Track health, find recipes, manage medications, book appointments
                 </p>
