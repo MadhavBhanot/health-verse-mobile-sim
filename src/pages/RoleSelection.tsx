@@ -22,7 +22,7 @@ const RoleSelection = () => {
 
     // Navigate to appropriate dashboard
     switch (role) {
-      case 'Member':
+      case 'patient':
         navigate('/patient/dashboard');
         break;
       case 'doctor':
